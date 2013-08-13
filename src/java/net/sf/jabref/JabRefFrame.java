@@ -1284,9 +1284,11 @@ public JabRefPreferences prefs() {
       edit.addSeparator();
       edit.add(mark);
       JMenu markSpecific = subMenu("Mark specific color");
+
       for (int i=0; i<Util.MAX_MARKING_LEVEL; i++)
           markSpecific.add(new MarkEntriesAction(this, i).getMenuItem());
       edit.add(markSpecific);
+      edit.add(new MarkEntriesAction(this).getMenuItem());
       edit.add(unmark);
       edit.add(unmarkAll); 
       edit.addSeparator();

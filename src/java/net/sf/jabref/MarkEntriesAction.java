@@ -43,6 +43,16 @@ public class MarkEntriesAction extends AbstractWorker implements ActionListener 
         menuItem.addActionListener(this);
     }
 
+    public MarkEntriesAction(JabRefFrame frame) {
+        this.frame = frame;
+        this.level = Util.MAX_MARKING_LEVEL-1;
+        menuItem = new JMenuItem("Mark with red");
+        menuItem.setMnemonic(String.valueOf(level+1).charAt(0));
+        menuItem.setOpaque(true);
+        menuItem.addActionListener(this);
+    }
+
+    
     public JMenuItem getMenuItem() {
         return menuItem;
     }
